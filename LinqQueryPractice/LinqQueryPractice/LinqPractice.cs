@@ -50,7 +50,6 @@ namespace LinqQueryPractice
             }
             return results;
         }
-
         public List<decimal> RemoveMinValue(List<decimal> inputs)
         {
             decimal lowest = inputs.Min();
@@ -74,6 +73,13 @@ namespace LinqQueryPractice
             }
             decimal output = averageGrades.Average();
             return output;
+        }
+
+        public bool CheckForTh(List<string> inputs)
+        {
+            var checkedInputs = inputs.Select(x => x.Contains("th"));
+            bool result = checkedInputs.Contains(true);
+            return result;
         }
     }
 }
